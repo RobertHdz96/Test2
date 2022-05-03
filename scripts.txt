@@ -1,0 +1,51 @@
+GEOREFERENCIAS
+
+Create table Georreferencias(
+idGeorreferencia int,
+idEstado int,
+Latitud float,
+Longitud float)
+
+----------------------------------------------------------------
+
+USUARIO
+
+Create table Usuario(
+ idUsuario int,
+ Contraseña varchar(50),
+ Nombre varchar (500),
+ Fecha_Nac datetime,
+ RFC varchar(20))
+
+----------------------------------------------------------------
+
+PERMISOS
+
+Create table Permisos(
+ idUsuario int,
+ idEstado int )
+
+----------------------------------------------------------------
+
+
+ESTADOS
+
+create table estado(
+idestado int,
+nombreestado varchar(90),
+abreviacion varchar(20))
+----------------------------------------------------------------
+
+CREATE PROCEDURE SP_GET_USER
+(
+@IdUsuario int,
+@Contraseña varchar(90)
+)
+As
+Begin
+	Select IdUsuario 
+	from usuario 
+	where idusuario = @IdUsuario
+End
+
+----------------------------------------------------------------
